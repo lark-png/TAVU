@@ -8,27 +8,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 const pairContainer = document.createElement('div');
                 pairContainer.className = 'video-description-pair';
 
-                // 创建视频部分
+                // 视频部分
                 const videoContainer = document.createElement('div');
                 videoContainer.className = 'video-section';
-
                 const videoElement = document.createElement('video');
                 videoElement.src = `video/${videoData.filename}`;
                 videoElement.controls = true;
                 videoElement.preload = 'auto';
-                videoElement.style.width = '100%';
-                videoElement.style.height = 'auto';
-
                 videoContainer.appendChild(videoElement);
 
-                // 创建描述部分
+                // 描述部分
                 const descriptionContainer = document.createElement('div');
                 descriptionContainer.className = 'description-section';
-
                 const descriptionElement = document.createElement('div');
                 descriptionElement.className = 'description';
 
-                // 动态生成描述内容
                 const desc = videoData.description;
                 descriptionElement.innerHTML = `
                     <p><strong>Video URL:</strong> <a href="${desc.url}" target="_blank">${desc.url}</a></p>
@@ -54,10 +48,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 // 将外层容器添加到页面
                 contentRow.appendChild(pairContainer);
 
-                // 调整描述容器的高度
-                videoElement.addEventListener('loadedmetadata', function() {
-                    descriptionContainer.style.height = this.clientHeight + 'px';
-                });
+
+                //  不需要动态调整高度，CSS会处理
             });
         })
         .catch(error => console.error('Error fetching the videos:', error));

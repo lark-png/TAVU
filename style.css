@@ -1,9 +1,9 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    height: 100vh;
     display: flex;
     flex-direction: column;
+    min-height: 100vh; /* ensure body takes up full viewport height */
 }
 
 header {
@@ -15,57 +15,59 @@ header {
 }
 
 .container {
-    flex: 1;
+    flex: 1; /* Allow container to grow and fill available space */
     overflow-y: auto;
-    display: flex; /* Add flex to container */
-    flex-wrap: wrap; /* Allow wrapping of items */
-    justify-content: space-around; /* Evenly distribute space around items */
-}
-
-.content-row {
     display: flex;
-    flex-direction: row; /* Changed to row to place video and description side by side */
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 48%; /* Adjust width as needed, ensures two pairs per row */
-    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px; /* Add padding to the container */
 
 }
-
 
 .video-description-pair {
-  display: flex;
-  flex-direction: row; /* Ensures video and description are side-by-side */
-    width: 100%; /* Occupy the full width of the parent */
+    display: flex;
+    width: 48%; /* Adjust width as needed */
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+
 }
 
-
 .video-section {
-    flex: 1;
+    width: 50%; /* Occupy half the width of the pair */
     padding: 10px;
     background-color: #f9f9f9;
-    display: flex;
-    align-items: center;
+    box-sizing: border-box; /* Include padding in width calculation */
+
 }
 
 .video-section video {
+    display: block; /* Prevents small space below video */
     width: 100%;
     height: auto;
 }
 
 .description-section {
-    flex: 1;
+    width: 50%; /* Occupy half the width of the pair */
     padding: 10px;
     background-color: #fff;
-    border-left: 1px solid #ccc;
     overflow-y: auto;
+    box-sizing: border-box; /* Include padding in width calculation */
+
 }
 
 .description {
     white-space: pre-wrap;
-    width: 100%;
-    max-height: 100%;
-    overflow-y: auto;
+
+}
+
+@media (max-width: 768px) { /* Adjust breakpoint as needed */
+  .video-description-pair {
+    width: 100%; /* Full width on smaller screens */
+    flex-direction: column; /* Stack video and description vertically */
+  }
+  .video-section, .description-section {
+    width: 100%; /* Full width on smaller screens */
+  }
 }

@@ -20,8 +20,6 @@ header {
     display: flex; /* Add flex to container */
     flex-wrap: wrap; /* Allow wrapping of items */
     justify-content: space-around; /* Evenly distribute space around items */
-
-
 }
 
 .content-row {
@@ -41,7 +39,6 @@ header {
   display: flex;
   flex-direction: row; /* Ensures video and description are side-by-side */
     width: 100%; /* Occupy the full width of the parent */
-
 }
 
 

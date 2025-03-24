@@ -17,22 +17,33 @@ header {
 .container {
     flex: 1;
     overflow-y: auto;
+    display: flex; /* Add flex to container */
+    flex-wrap: wrap; /* Allow wrapping of items */
+    justify-content: space-around; /* Evenly distribute space around items */
+
+
 }
 
 .content-row {
     display: flex;
-    flex-direction: column;
-    padding: 10px;
-}
-
-.video-description-pair {
-    display: flex;
-    flex-direction: row;
+    flex-direction: row; /* Changed to row to place video and description side by side */
     margin-bottom: 20px;
     border: 1px solid #ccc;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 48%; /* Adjust width as needed, ensures two pairs per row */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+
 }
+
+
+.video-description-pair {
+  display: flex;
+  flex-direction: row; /* Ensures video and description are side-by-side */
+    width: 100%; /* Occupy the full width of the parent */
+
+}
+
 
 .video-section {
     flex: 1;

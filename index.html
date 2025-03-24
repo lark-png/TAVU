@@ -3,16 +3,379 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ACVUBench</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Video Demo Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: auto; /* 支持多视频滚动 */
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px; /* 每个视频块之间的间距 */
+        }
+        .video-section {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+        .quiz-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #eaeaea;
+            padding: 20px;
+            overflow-y: auto; /* 允许滚动 */
+        }
+        iframe {
+            width: 80%;
+            height: 80%;
+        }
+        .json-data {
+            font-size: 14px;
+            white-space: pre-wrap; /* 保留格式和换行 */
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-height: 90%; /* 防止内容溢出 */
+            overflow-y: auto;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Demos of ACVUBench</h1>
-    </header>
+    <!-- AIE1.mp4 -->
     <div class="container">
-        <div class="content-row" id="content-row"> </div>
+        <div class="video-section">
+            <iframe 
+                src="https://www.youtube.com/embed/4wtz1AP3y_o" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
         </div>
-    <script src="script.js"></script>
+        <div class="quiz-section">
+            <div class="json-data">
+                {
+                    "url": "https://www.youtube.com/shorts/4wtz1AP3y_o?si=K1n90rDkmsXC6nFh",
+                    "video_type": "TED speech",
+                    "task_type": "Audio Information Extraction",
+                    "question": "The person in the audio said when they would have a trip from Central Africa to the farthest edge of Norway.",
+                    "option_A": "the spring of 2025",
+                    "option_B": "the summer of 2025",
+                    "option_C": "the spring of 2026",
+                    "option_D": "the summer of 2026",
+                    "answer": "A"
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- AIE2.mp4 -->
+    <div class="container">
+        <div class="video-section">
+            <iframe 
+                src="https://www.youtube.com/embed/IjXTeeysqEc" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        <div class="quiz-section">
+            <div class="json-data">
+                {
+                    "url": "https://www.youtube.com/watch?v=IjXTeeysqEc",
+                    "video_type": "talkshow",
+                    "task_type": "Audio Information Extraction",
+                    "question": "How many times does the man do the holiday show?",
+                    "option_A": "The third time",
+                    "option_B": "The second time",
+                    "option_C": "The first time",
+                    "option_D": "The fourth time",
+                    "answer": "C"
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- ACC1.mp4 -->
+    <div class="container">
+        <div class="video-section">
+            <iframe 
+                src="https://www.youtube.com/embed/7N_eeUlmIoc" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        <div class="quiz-section">
+            <div class="json-data">
+                {
+                    "url": "https://www.youtube.com/watch?v=7N_eeUlmIoc",
+                    "video_type": "talkshow",
+                    "task_type": "Audio Content Counting",
+                    "question": "How many times is \"superman\" mentioned in the video?",
+                    "option_A": "1",
+                    "option_B": "2",
+                    "option_C": "3",
+                    "option_D": "4",
+                    "answer": "D"
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- ACC2.mp4 -->
+    <div class="container">
+        <div class="video-section">
+            <iframe 
+                src="https://www.youtube.com/embed/ThHTzg8LWcU" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        <div class="quiz-section">
+            <div class="json-data">
+                {
+                    "url": "https://www.youtube.com/shorts/ThHTzg8LWcU",
+                    "video_type": "food",
+                    "task_type": "Audio Content Counting",
+                    "question": "How many crisp sounds were there in all?",
+                    "option_A": "one",
+                    "option_B": "two",
+                    "option_C": "three",
+                    "option_D": "four",
+                    "answer": "D"
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- AEL1.mp4 -->
+    <div class="container">
+        <div class="video-section">
+            <iframe 
+                src="https://www.youtube.com/embed/hIhgaSwVwh8" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        <div class="quiz-section">
+            <div class="json-data">
+                {
+                    "url": "https://www.youtube.com/shorts/hIhgaSwVwh8?si=uP3Zf7p7333ByFs4",
+                    "video_type": "TED speech",
+                    "task_type": "Audio Event Location",
+                    "question": "When did the animal sounds appear?",
+                    "option_A": "00:05 to 00:11",
+                    "option_B": "00:11 to 00:20",
+                    "option_C": "00:20 to 00:40",
+                    "option_D": "00:40 to 01:00",
+                    "answer": "A"
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- AEL2.mp4 -->
+    <div class="container">
+        <div class="video-section">
+            <iframe 
+                src="https://www.youtube.com/embed/-RJLfBy2Gx8" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        <div class="quiz-section">
+            <div class="json-data">
+                {
+                    "url": "https://www.youtube.com/watch?v=-RJLfBy2Gx8",
+                    "video_type": "talkshow",
+                    "task_type": "Audio Event Location",
+                    "question": "What second does the video talk about T-RRex?",
+                    "option_A": "32 to 33",
+                    "option_B": "37 to 38",
+                    "option_C": "39 to 40",
+                    "option_D": "35 to 36",
+                    "answer": "D"
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- AVCM1.mp4 -->
+    <div class="container">
+        <div class="video-section">
+            <iframe 
+                src="https://www.youtube.com/embed/L0L_D2VPXMU" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        <div class="quiz-section">
+            <div class="json-data">
+                {
+                    "url": "https://www.youtube.com/shorts/L0L_D2VPXMU?si=dEBQQ99FuvkwcNxH",
+                    "video_type": "TED speech",
+                    "task_type": "Audio Character Matching",
+                    "question": "Who mentioned ChatGPT?",
+                    "option_A": "a woman in black with short hair",
+                    "option_B": "a woman in a shirt",
+                    "option_C": "a man in black with short hair",
+                    "option_D": "a man in a shirt",
+                    "answer": "A"
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- AVCM2.mp4 -->
+    <div class="container">
+        <div class="video-section">
+            <iframe 
+                src="https://www.youtube.com/embed/6y1h1mBEn7k" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        <div class="quiz-section">
+            <div class="json-data">
+                {
+                    "url": "https://www.youtube.com/watch?v=6y1h1mBEn7k",
+                    "video_type": "meeting",
+                    "task_type": "Audio Character Matching",
+                    "question": "Who does cough three times at the first 20 seconds?",
+                    "option_A": "The man in red glasses",
+                    "option_B": "The man in the cap",
+                    "option_C": "The man in white outfit",
+                    "option_D": "Nobody",
+                    "answer": "A"
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- AVOM1.mp4 -->
+    <div class="container">
+        <div class="video-section">
+            <iframe 
+                src="https://www.youtube.com/embed/NXeHeEHj9Xc" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        <div class="quiz-section">
+            <div class="json-data">
+                {
+                    "url": "https://www.youtube.com/watch?v=NXeHeEHj9Xc",
+                    "video_type": "food",
+                    "task_type": "Audio Object Matching",
+                    "question": "When the introducer talks about a customer ordering fries, what doesn't appear in the picture?",
+                    "option_A": "forks",
+                    "option_B": "the potato chips",
+                    "option_C": "the man in suit",
+                    "option_D": "menu",
+                    "answer": "B"
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- AVOM2.mp4 -->
+    <div class="container">
+        <div class="video-section">
+            <iframe 
+                src="https://www.youtube.com/embed/6QulIvGWHJ0" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        <div class="quiz-section">
+            <div class="json-data">
+                {
+                    "url": "https://www.youtube.com/shorts/6QulIvGWHJ0",
+                    "video_type": "debate",
+                    "task_type": "Audio Object Matching",
+                    "question": "When the third cheer sounds in the video, what appears in the upper right corner of the picture?",
+                    "option_A": "A smiling expression with teeth showing and \"3/10\".",
+                    "option_B": "An expression with star-shaped eyes and \"7.7/10\".",
+                    "option_C": "A shocked expression with wide-open eyes and \"8/10\".",
+                    "option_D": "A smiling face with a red heart on its face and \"5/10\".",
+                    "answer": "D"
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- AVTM1.mp4 -->
+    <div class="container">
+        <div class="video-section">
+            <iframe 
+                src="https://www.youtube.com/embed/y7rwASKnvFY" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        <div class="quiz-section">
+            <div class="json-data">
+                {
+                    "url": "https://www.youtube.com/watch?v=y7rwASKnvFY&list=PL6CBAXPeBajk85dj17E_s_xr2fvTV1tlw&index=9",
+                    "video_type": "sports",
+                    "task_type": "Audio OCR Matching",
+                    "question": "When the number 48KG appears on the screen, what is being explained at this time?",
+                    "option_A": "J2 Weight requirements for competitors.",
+                    "option_B": "Classification of judo.",
+                    "option_C": "Judo techniques.",
+                    "option_D": "The duration of a judo competition.",
+                    "answer": "A"
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- AVTM2.mp4 -->
+    <div class="container">
+        <div class="video-section">
+            <iframe 
+                src="https://www.youtube.com/embed/yMR2YHOdPno" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        <div class="quiz-section">
+            <div class="json-data">
+                {
+                    "url": "https://www.youtube.com/watch?si=RNpKfFikHCa0yIdp&v=yMR2YHOdPno&feature=youtu.be",
+                    "video_type": "game",
+                    "task_type": "Audio OCR Matching",
+                    "question": "When the audio says \"Oh shit faker's clutching it\", which text is on the top of screen?",
+                    "option_A": "SHUT DOWN",
+                    "option_B": "FIRST BLOOD",
+                    "option_C": "DOUBLE KILL",
+                    "option_D": "TRIPLE KILL",
+                    "answer": "A"
+                }
+            </div>
+        </div>
+    </div>
 </body>
 </html>
